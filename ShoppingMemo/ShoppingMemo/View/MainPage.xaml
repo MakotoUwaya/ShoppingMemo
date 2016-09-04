@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ctl="ShoppingMemo.Contorol"
+             xmlns:vm="ShoppingMemo.ViewModel"
+             x:Class="ShoppingMemo.View.MainPage">
+  <!--<StackLayout>
+    <ctl:CategoryBlock />
+  </StackLayout>-->
+
+  <ContentPage.BindingContext>
+    <vm:DefaultMainPageViewModel />
+  </ContentPage.BindingContext>
+  
+  <Grid>
+    <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center" />
+  </Grid>
+</ContentPage>
