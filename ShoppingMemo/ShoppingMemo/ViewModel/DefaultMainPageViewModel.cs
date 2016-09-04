@@ -31,11 +31,21 @@ namespace ShoppingMemo.ViewModel
         {
             this.categoryList = new List<Category>();
             this.categoryList.Add(new Category("Shop",
-                new List<Item>() { new Item("Something eat.") }));
+                new List<Item>() {
+                    new Item("Something eat."),
+                }));
 
-            this.Name = "Sample";
+            this.categoryList.Add(new Category("Station",
+                new List<Item>() {
+                    new Item("Ticket"),
+                }));
+
+            this.categoryList.Add(new Category("School",
+                new List<Item>() {
+                    new Item("Notebook"),
+                }));
+
+            this.Name = "Sample page";
         }
-
-
     }
 }

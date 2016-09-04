@@ -1,18 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:ctl="ShoppingMemo.Contorol"
-             xmlns:vm="ShoppingMemo.ViewModel"
+             xmlns:local="clr-namespace:ShoppingMemo; assembly:ShoppingMemo"
+             xmlns:ctl="clr-namespace:ShoppingMemo.Contorol; assembly=ShoppingMemo"
+             xmlns:vm="clr-namespace:ShoppingMemo.ViewModel; assembly=ShoppingMemo"
+             xmlns:mdl="clr-namespace:ShoppingMemo.Model; assembly=ShoppingMemo"
+             Title="{Binding Name}"
              x:Class="ShoppingMemo.View.MainPage">
-  <!--<StackLayout>
-    <ctl:CategoryBlock />
-  </StackLayout>-->
+  
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <local:GuidToStringConverter x:Key="GuidConverter" />
+    </ResourceDictionary>
+  </ContentPage.Resources>
 
   <ContentPage.BindingContext>
     <vm:DefaultMainPageViewModel />
   </ContentPage.BindingContext>
-  
+
   <Grid>
-    <Label Text="{Binding Name}" VerticalOptions="Center" HorizontalOptions="Center" />
+    <Grid.RowDefinitions>
+      <RowDefinition Height="1*" />
+      <RowDefinition Height="1*" />
+    </Grid.RowDefinitions>
+    <ListView Grid.Row="0" ItemsSource="{Binding CategoryList}">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <StackLayout Margin="5">
+              <Label Text="{Binding ID, Converter={StaticResource GuidConverter}}" HorizontalOptions="Center" />
+              <Label Text="{Binding Name}" HorizontalOptions="Center" />
+            </StackLayout>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+  
+    <Picker Grid.Row="1" x:Name="pick" Title="FilePicker" VerticalOptions="CenterAndExpand">
+      <Picker.Items>
+        <x:String>abc</x:String>
+        <x:String>efg</x:String>
+      </Picker.Items>
+    </Picker>
   </Grid>
 </ContentPage>

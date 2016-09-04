@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using ShoppingMemo.ViewModel;
 
 namespace ShoppingMemo.View
 {
@@ -13,6 +14,11 @@ namespace ShoppingMemo.View
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        public void test()
+        {
+            
         }
     }
 }

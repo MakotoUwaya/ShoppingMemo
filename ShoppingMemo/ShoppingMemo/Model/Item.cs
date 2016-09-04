@@ -46,7 +46,7 @@ namespace ShoppingMemo.Model
         /// <param name="itemName">アイテムの名前</param>
         public Item(string itemName)
         {
-            ID = new Guid();
+            ID = Guid.NewGuid();
             this.Name = itemName;
         }
     }

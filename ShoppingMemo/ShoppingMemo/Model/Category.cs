@@ -38,6 +38,7 @@ namespace ShoppingMemo.Model
 
         public Category(string categoryName, List<Item> item)
         {
+            id = Guid.NewGuid();
             name = categoryName;
 
             if (item == null) item = new List<Item>();
