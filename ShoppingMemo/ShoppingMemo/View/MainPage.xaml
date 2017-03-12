@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:ShoppingMemo; assembly:ShoppingMemo"
-             xmlns:ctl="clr-namespace:ShoppingMemo.Contorol; assembly=ShoppingMemo"
-             xmlns:vm="clr-namespace:ShoppingMemo.ViewModel; assembly=ShoppingMemo"
-             xmlns:mdl="clr-namespace:ShoppingMemo.Model; assembly=ShoppingMemo"
+             xmlns:xf="clr-namespace:Xamarin.Forms;assembly:ShoppingMemo"
+             xmlns:local="clr-namespace:ShoppingMemo;assembly:ShoppingMemo"
+             xmlns:ctl="clr-namespace:ShoppingMemo.Contorol;assembly=ShoppingMemo"
+             xmlns:vm="clr-namespace:ShoppingMemo.ViewModel;assembly=ShoppingMemo"
+             xmlns:mdl="clr-namespace:ShoppingMemo.Model;assembly=ShoppingMemo"
              Title="{Binding Name}"
              x:Class="ShoppingMemo.View.MainPage">
   
@@ -18,12 +19,11 @@
     <vm:DefaultMainPageViewModel />
   </ContentPage.BindingContext>
 
-  <Grid>
-    <Grid.RowDefinitions>
-      <RowDefinition Height="1*" />
-      <RowDefinition Height="1*" />
-    </Grid.RowDefinitions>
-    <ListView Grid.Row="0" ItemsSource="{Binding CategoryList}">
+  <StackLayout>
+    <!--<Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>-->
+    <!--<ListView Grid.Row="0" ItemsSource="{Binding CategoryList}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
@@ -36,11 +36,28 @@
       </ListView.ItemTemplate>
     </ListView>
   
-    <Picker Grid.Row="1" x:Name="pick" Title="FilePicker" VerticalOptions="CenterAndExpand">
+    <Button Grid.Row="1" x:Name="PopupButton" Clicked="PopupButton_Clicked" Text="Click me" />
+    
+    <Picker Grid.Row="2" x:Name="pick" Title="FilePicker" VerticalOptions="CenterAndExpand">
       <Picker.Items>
         <x:String>abc</x:String>
         <x:String>efg</x:String>
       </Picker.Items>
     </Picker>
-  </Grid>
+
+    <xf:WrapLayoutOld Grid.Row="3" Orientation="Horizontal">
+      <Button Text="a long long long Button A" />
+      <Button Text="a long long long Button B" />
+      <Button Text="a long long long Button C" />
+      <Button Text="a long long long Button D" />
+      <Button Text="a long long long Button E" />
+    </xf:WrapLayoutOld>-->
+    <xf:WrapLayoutOld Orientation="Horizontal">
+      <Button Text="a long long long Button A" />
+      <Button Text="a long long long Button B" />
+      <Button Text="a long long long Button C" />
+      <Button Text="a long long long Button D" />
+      <Button Text="a long long long Button E" />
+    </xf:WrapLayoutOld>
+  </StackLayout>
 </ContentPage>

@@ -13,12 +13,13 @@ namespace ShoppingMemo.View
     {
         public MainPage()
         {
-            InitializeComponent();
+            InitializeComponent();   
+                    
         }
 
-        public void test()
+        private void PopupButton_Clicked(object sender, EventArgs e)
         {
-            
+            DisplayAlert("タイトル", "メッセージ", "OK");
         }
     }
 }
